@@ -1,14 +1,14 @@
 require('dotenv').config()
 var Twit = require('twit')
 
-var T = new Twit({
+var TwitterClient = new Twit({
     consumer_key: process.env.CONSUMER_KEY,
     consumer_secret: process.env.CONSUMER_SECRET_KEY,
     access_token: process.env.ACCESS_TOKEN_KEY,
     access_token_secret: process.env.ACCESS_TOKEN_SECRET
 })
 
-T.get('account/verify_credentials',{
+TwitterClient.get('account/verify_credentials',{
     include_entities: false,
     skip_status: true,
     include_email: false
@@ -21,8 +21,8 @@ const termsToTrack = [
     "#AndroidDevs",
     "#NowInAndroid",
     "#AndroidNewbie",
-    "#thisIsNothingButATestTweet",
-    "#KotlinTips"
+    "#KotlinTips",
+    "#thisIsNothingButATestTweet"
 ]
 
 function onAuthenticated(err){
@@ -35,25 +35,33 @@ function onAuthenticated(err){
 }
 
 function trackTweets(){
-    var stream = T.stream('statuses/filter', {track:termsToTrack, tweet_mode:'extended'})
+    var stream = TwitterClient.stream('statuses/filter', {track:termsToTrack, tweet_mode:'extended'})
 
     stream.on('tweet', function (tweet) {
         if(!tweet.retweeted_status && tweet.user.screen_name !== handle){
             console.log(tweet.text)
-            console.log(tweet.id_str + tweet.name)
+            console.log(tweet.id_str)
             makeRetweet(tweet.id_str)
-            //todo add a new function to like the tweets
+            likeTweet(tweet.id_str)
         }
     })
 }
 
 function makeRetweet(tweetId) {
-    T.post('statuses/retweet', { id: tweetId })
+    TwitterClient.post('statuses/retweet', { id: tweetId })
         .then(result => {
-            console.log('Retweeted successfully!');
+            console.log('by nodejs ----> Retweeted successfully!');
+        }).catch(console.error);
+}
+
+function likeTweet(tweetId) {
+    TwitterClient.post('favorites/create', { id: tweetId })
+        .then(result => {
+            console.log('by nodejs ----> Liked tweet successfully!');
         }).catch(console.error);
 }
 
 function sendTweet() {
-    T.post('statuses/update',{ status : 'test tweet 8 to retrack tweet bases on #thisIsNothingButATestTweet' })
+    TwitterClient.post('statuses/update',{ status : 'test tweet 8 to retrack tweet bases on #thisIsNothingButATestTweet' })
 }
+
