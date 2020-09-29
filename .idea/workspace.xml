@@ -19,9 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70b97e15-62a0-4702-8a9c-676622846a13" name="Default Changelist" comment="like the tracked tweets">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="70b97e15-62a0-4702-8a9c-676622846a13" name="Default Changelist" comment="deploy on heroku">
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601362012744</updated>
       <workItem from="1601362013872" duration="9523000" />
-      <workItem from="1601372974474" duration="947000" />
+      <workItem from="1601372974474" duration="1234000" />
     </task>
     <task id="LOCAL-00001" summary="initail project">
       <created>1601362671137</created>
@@ -108,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1601372948872</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deploy on heroku">
+      <created>1601373942956</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1601373942956</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,7 +137,8 @@
     <MESSAGE value="first Tweet" />
     <MESSAGE value="retweet the tracked tweets" />
     <MESSAGE value="like the tracked tweets" />
-    <option name="LAST_COMMIT_MESSAGE" value="like the tracked tweets" />
+    <MESSAGE value="deploy on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="deploy on heroku" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601363859861">
