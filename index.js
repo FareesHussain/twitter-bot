@@ -19,5 +19,10 @@ function onAuthenticated(err){
         console.log("an Error occured: "+err)
     } else {
         console.log('Authenticated successfully')
+        sendTweet()
     }
+}
+
+function sendTweet() {
+    T.post('statuses/update',{ status : 'this is my First Tweet from the bot #EnjoyYourDay' })
 }
