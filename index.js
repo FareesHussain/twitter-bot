@@ -17,8 +17,9 @@ TwitterClient.get('account/verify_credentials',{
 const handle = "sarcasticdevel1"
 
 const termsToTrack = [
+    "#100daysofcodechallenge",
     "#Kotlin",
-    "#AndroidDevs",
+    "#AndroidDev",
     "#NowInAndroid",
     "#AndroidNewbie",
     "#KotlinTips",
