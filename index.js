@@ -1,5 +1,6 @@
 require('dotenv').config()
 var Twit = require('twit')
+const express = require('express');
 
 var TwitterClient = new Twit({
     consumer_key: process.env.CONSUMER_KEY,
@@ -66,3 +67,10 @@ function sendTweet() {
     TwitterClient.post('statuses/update',{ status : 'test tweet 8 to retrack tweet bases on #thisIsNothingButATestTweet' })
 }
 
+app.use("/", () => {
+    res.send("Hello World")
+});
+
+app.listen(5000, () => {
+    console.log('Server started on 5000');
+})
